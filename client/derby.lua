@@ -31,7 +31,7 @@ function Derby:ExitVehicle()
 end
 
 function Derby:ModulesLoad()
-    Events:FireRegisteredEvent( "HelpAddItem",
+    Events:Fire( "HelpAddItem",
         {
             name = "Derby",
             text = 
@@ -45,7 +45,7 @@ function Derby:ModulesLoad()
 end
 
 function Derby:ModuleUnload()
-    Events:FireRegisteredEvent( "HelpRemoveItem",
+    Events:Fire( "HelpRemoveItem",
         {
             name = "Derby"
         } )

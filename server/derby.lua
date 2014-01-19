@@ -122,7 +122,6 @@ function Derby:__init( spawn )
     Events:Subscribe( "PlayerEnterVehicle", self, self.PlayerEnterVehicle )
     Events:Subscribe( "PlayerExitVehicle", self, self.PlayerExitVehicle )
 
-    Events:Register( "JoinGamemode" )
     Events:Subscribe( "JoinGamemode", self, self.JoinGamemode )
 end
 
@@ -184,7 +183,7 @@ function Derby:EnterDerby(player)
     local args = {}
     args.name = "Derby"
     args.player = player
-    Events:FireRegisteredEvent( "JoinGamemode", args )
+    Events:Fire( "JoinGamemode", args )
     
     local p = DerbyPlayer(player, self)
     p:Enter()
